@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.oberkfell.cryptodiary.activity.ViewEntryActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/entryTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/librefranklin_black"
+        android:textSize="24sp"
+        tools:text="Entry title goes here"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/entryDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/librefranklin_italic"
+        tools:text="Date goes here"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/entryTitleTextView"/>
+
+    <TextView
+        android:id="@+id/entryTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/librefranklin_regular"
+        tools:text="Date goes here"
+        android:textSize="18sp"
+        android:layout_marginTop="16sp"
+        app:layout_constraintTop_toBottomOf="@id/entryDateTextView"/>
+
+</android.support.constraint.ConstraintLayout>
