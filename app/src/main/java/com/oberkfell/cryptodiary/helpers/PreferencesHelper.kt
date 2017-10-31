@@ -14,6 +14,7 @@ class PreferencesHelper @Inject constructor(application: CryptoDiaryApplication)
     private val PREF_HAS_BUILT_REALM = "has_built_realm"
     private val PREF_SALT = "salt"
     private val PREF_ENCRYPTED_REALM_KEY = "realm_key"
+    private val PREF_IV = "iv"
 
     private val preferences: SharedPreferences
 
@@ -41,12 +42,30 @@ class PreferencesHelper @Inject constructor(application: CryptoDiaryApplication)
             return setByteArrayPref(PREF_ENCRYPTED_REALM_KEY, value)
         }
 
+    var iv: ByteArray
+        get() {
+            return getByteArrayPref(PREF_IV)
+        }
+        set(value) {
+            return setByteArrayPref(PREF_IV, value)
+        }
+
     init {
         preferences = application.getSharedPreferences(PREF_FILE_NAME, MODE_PRIVATE)
     }
 
-    fun isSaltUnset() : Boolean {
-        return getStringPref(PREF_SALT).isEmpty()
+    fun isSaltSet() : Boolean {
+        return !getStringPref(PREF_SALT).isEmpty()
+    }
+
+    fun isKeySet() : Boolean {
+        return !getStringPref(PREF_ENCRYPTED_REALM_KEY).isEmpty()
+    }
+
+    fun clearKey() {
+        preferences.edit().remove(PREF_ENCRYPTED_REALM_KEY)
+                .remove(PREF_IV)
+                .apply()
     }
 
     private fun getByteArrayPref(prefName: String) : ByteArray {
