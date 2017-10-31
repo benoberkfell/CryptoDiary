@@ -67,7 +67,7 @@ class NewEntryActivity : AppCompatActivity() {
                 entry.subject = titleText.toString()
                 entry.text = entryText.toString()
             }
-
+            finish()
         }
     }
 }
