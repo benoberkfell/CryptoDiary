@@ -196,9 +196,11 @@ class MainPresenter @Inject constructor(private var fingerprintManager: Fingerpr
         val secretKey = keyStore.getKey(KEY_NAME, null)
 
         if (encrypt) {
-            cipher.init(Cipher.ENCRYPT_MODE, secretKey)
-            val ivParams = cipher.parameters.getParameterSpec(IvParameterSpec::class.java)
-            preferencesHelper.iv = ivParams.iv
+            // AES block size is 16 bytes, initialize the algorithm with 16 random bytes for
+            // its initialization vector
+            val ivSpec = IvParameterSpec(getSomeRandomBytes(16))
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivSpec)
+            preferencesHelper.iv = ivSpec.iv
         } else {
             cipher.init(Cipher.DECRYPT_MODE, secretKey, IvParameterSpec(preferencesHelper.iv))
         }
@@ -222,11 +224,15 @@ class MainPresenter @Inject constructor(private var fingerprintManager: Fingerpr
         return if (preferencesHelper.isSaltSet()) {
             preferencesHelper.salt
         } else {
-            val secRand = SecureRandom()
-            val salt = ByteArray(20)
-            secRand.nextBytes(salt)
-            salt
+            getSomeRandomBytes(20)
         }
+    }
+
+    private fun getSomeRandomBytes(size: Int) : ByteArray {
+        val secRand = SecureRandom()
+        val bytes = ByteArray(size)
+        secRand.nextBytes(bytes)
+        return bytes
     }
 
 
