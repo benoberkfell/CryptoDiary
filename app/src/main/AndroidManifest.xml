@@ -12,16 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DiaryListActivity" />
-        <activity android:name=".activity.NewEntryActivity" />
-        <activity android:name=".activity.ViewEntryActivity"></activity>
+        <activity android:name=".activity.DiaryListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.NewEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ViewEntryActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
