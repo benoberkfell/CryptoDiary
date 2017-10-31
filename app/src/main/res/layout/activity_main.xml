@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/passwordEntry"
-        android:text="Enter Your Password"
+        android:text="@string/enter_your_password"
         app:layout_constraintBottom_toTopOf="@+id/passwordEntry"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -30,7 +30,7 @@
         android:id="@+id/passwordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open"
+        android:text="@string/open"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -44,7 +44,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordButton"
-        android:text="Use Fingerprint Next Time"/>
+        android:text="@string/use_fingerprint_next_time"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -18,4 +18,11 @@
     <string name="make_a_purchase">Make a Purchase</string>
 
     <string name="fingerprint_success">Success!</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="open">Open</string>
+    <string name="use_fingerprint_next_time">Use Fingerprint Next Time</string>
+    <string name="title_of_your_entry">Title of your entry</string>
+    <string name="whats_up">What\'s up?</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

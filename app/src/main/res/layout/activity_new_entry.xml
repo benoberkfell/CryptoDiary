@@ -14,7 +14,7 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/titleInputText"
-            android:hint="Title of your entry"
+            android:hint="@string/title_of_your_entry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
@@ -30,7 +30,7 @@
         <android.support.design.widget.TextInputEditText
             android:id="@+id/entryInputText"
             android:inputType="textMultiLine"
-            android:hint="What's up?"
+            android:hint="@string/whats_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
