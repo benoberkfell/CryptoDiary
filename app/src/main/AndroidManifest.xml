@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oberkfell.cryptodiary">
 
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
     <application
         android:name=".activity.CryptoDiaryApplication"
         android:allowBackup="true"
